@@ -11315,10 +11315,11 @@ MonoBehaviour:
   - {fileID: 975787094}
   - {fileID: 1614611817}
   - {fileID: 1076761526}
+  arkanoidManager: {fileID: 325856805}
   isBlockMoving: 0
   MonsterNum: 1
   Con: 1
-  playerHP: 5
+  playerHP: 3
   iceSK: 0
 --- !u!4 &364920015
 Transform:
@@ -12478,6 +12479,7 @@ MonoBehaviour:
   iFramesDuration: 0
   numberOfFlashes: 0
   components: []
+  BoxDie: 0
 --- !u!95 &1117331456
 Animator:
   serializedVersion: 3
@@ -12801,7 +12803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440642078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.21, y: 0, z: 0}
+  m_LocalPosition: {x: 8.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 417038587}

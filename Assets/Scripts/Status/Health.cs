@@ -19,6 +19,8 @@ public class Health : MonoBehaviour
     [SerializeField] private Behaviour[] components;
     private bool invulnerable;
 
+    public bool BoxDie = false;
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -48,7 +50,17 @@ public class Health : MonoBehaviour
                     component.enabled = false;
 
                 dead = true;
-                Destroy(this.gameObject);   
+                if (gameObject.name == "Box(Clone)")
+                {
+                    BoxDie = true;
+
+                }
+                    
+                else
+                {
+                    Destroy(this.gameObject);
+                }
+                     
             }
         }
     }

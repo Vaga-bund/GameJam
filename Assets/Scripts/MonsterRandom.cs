@@ -165,7 +165,7 @@ public class MonsterRandom : MonoBehaviour
 
     float MonsterHP(int mon)
     {
-        Debug.Log("1");
+        //Debug.Log("1");
         if (mon == 0)
             return 10;
         else if (mon == 1)

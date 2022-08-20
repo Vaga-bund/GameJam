@@ -85,7 +85,7 @@ public class ArkanoidManager : MonoBehaviour
     public void CountOnGround()
     {
         bulletCount--;
-        Debug.Log(bulletCount);
+        //Debug.Log(bulletCount);
     }
 
     IEnumerator movePhase(float rotZ)
@@ -94,7 +94,7 @@ public class ArkanoidManager : MonoBehaviour
 
         ableMove = true;
         bulletAmount = 0.0f;
-        Debug.Log("Start Move Phase");
+        //Debug.Log("Start Move Phase");
 
         if (ableMove)
         {
@@ -115,7 +115,7 @@ public class ArkanoidManager : MonoBehaviour
 
         if(Input.GetMouseButtonDown(1) || timer >= 10.0f)
         {
-            Debug.Log("Stop Move Phase");
+           // Debug.Log("Stop Move Phase");
             bulletCount = bulletAmmo;
             ableMove = false;
             playerMovePhase = false;
@@ -131,7 +131,7 @@ public class ArkanoidManager : MonoBehaviour
 
         //player.transform.rotation = Quaternion.Euler(target);
 
-        Debug.Log("Attack Move Phase");
+       // Debug.Log("Attack Move Phase");
 
         if (Input.GetMouseButtonDown(0) && ableAttack)
         {
