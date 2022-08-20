@@ -74,6 +74,9 @@ public class GameManager : MonoBehaviour
             Health.MonsterNineTailDie = false;
             Monsterscore(2);
         }
+
+        if (MonsterPoint[0] >= 50 && MonsterPoint[1] >= 40 && MonsterPoint[2] >= 10)
+            GameClear();
     }
 
     void BoxSkill()
@@ -108,5 +111,10 @@ public class GameManager : MonoBehaviour
     {
         MonsterPoint[mun]++;
         UIMonster[mun].GetComponentInChildren<Text>().text = " X" + MonsterPoint[mun].ToString();
+    }
+
+    void GameClear()
+    {
+        SceneManager.LoadScene("GameClearScene");
     }
 }
