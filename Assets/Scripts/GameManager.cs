@@ -10,15 +10,12 @@ public class GameManager : MonoBehaviour
 
     public ArkanoidManager arkanoidManager;
 
-
     public bool isBlockMoving;
 
     public int MonsterNum = 1;
     public int Con = 1;
     public int playerHP = 3;
     public int iceSK = 0;
-
-     
 
     // Start is called before the first frame update
     void Start()
@@ -49,11 +46,6 @@ public class GameManager : MonoBehaviour
         if (playerHP < 1)
             UIHeart[0].color = new Color(0.5f, 0.5f, 0.5f, 1);
 
-        
-           
-        
-        
-
         if (playerHP <= 0)
         {
             playerHP = 0;
@@ -68,13 +60,11 @@ public class GameManager : MonoBehaviour
 
     void BoxSkill()
     {
-
-
-        
         // 검의 갯수
         if (BoxOpen.Boxrand < 35)
         {
             Debug.Log(BoxOpen.Boxrand + " 검의 갯수");
+            arkanoidManager.IncreaseAmmo();
         }
         // 공격력 보너스
         else if(BoxOpen.Boxrand < 70)

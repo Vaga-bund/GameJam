@@ -27,6 +27,7 @@ public class ArkanoidManager : MonoBehaviour
     private float bulletAmount = 0.0f;
     private float fireRate = 0.1f;
     private float fireCoolTime = 0.1f;
+    private float damage = 1.0f;
 
     private float bulletCount;
     private float angle;
@@ -91,6 +92,13 @@ public class ArkanoidManager : MonoBehaviour
         bulletCount--;
         //Debug.Log(bulletCount);
     }
+
+    public void IncreaseAmmo()
+    {
+        bulletAmmo++;
+    }
+
+
 
     IEnumerator movePhase(float rotZ)
     {

@@ -53,6 +53,8 @@ public class BoxOpen : MonoBehaviour
         {
             SkillUI[1].gameObject.SetActive(true);
 
+
+
         }
         // 체력회복
         else if (Boxrand < 85)
