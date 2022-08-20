@@ -7,22 +7,20 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Image[] UIHeart;
+    public Image[] UIMonster;
+    public int[] MonsterPoint;
 
     public ArkanoidManager arkanoidManager;
-
-
     public bool isBlockMoving;
-
     public int MonsterNum = 1;
     public int Con = 1;
     public int playerHP = 3;
     public int iceSK = 0;
 
-     
-
     // Start is called before the first frame update
     void Start()
     {
+
 
     }
 
@@ -64,13 +62,28 @@ public class GameManager : MonoBehaviour
             BoxOpen.Boxop = false;
             BoxSkill();
         }
+
+        if (Health.MonsterRatDie)
+        {
+            Health.MonsterRatDie = false;
+            Monsterscore(0);
+        }
+        else if (Health.MonsterSkullDie)
+        {
+            Health.MonsterSkullDie = false;
+            Monsterscore(1);
+        }
+        else if (Health.MonsterNineTailDie)
+        {
+            Health.MonsterNineTailDie = false;
+            Monsterscore(2);
+        }
+            
+
     }
 
     void BoxSkill()
     {
-
-
-        
         // °ËÀÇ °¹¼ö
         if (BoxOpen.Boxrand < 35)
         {
@@ -95,4 +108,11 @@ public class GameManager : MonoBehaviour
             iceSK++;
         }
     }
+
+    public void Monsterscore(int mun)
+    {
+        MonsterPoint[mun]++;
+        UIMonster[mun].GetComponentInChildren<Text>().text = " X" + MonsterPoint[mun].ToString();
+    }
+
 }
