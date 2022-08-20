@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -29,9 +30,11 @@ public class Health : MonoBehaviour
         if (invulnerable) return;
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
+        transform.GetComponentInChildren<Text>().text = currentHealth.ToString();
+
         if (currentHealth > 0)
         {
-            anim.SetTrigger("Hurt");
+            //anim.SetTrigger("Hurt");
             StartCoroutine(Invunerability());
         }
         else
@@ -48,8 +51,6 @@ public class Health : MonoBehaviour
                 Destroy(this.gameObject);   
             }
         }
-
-        Debug.Log(currentHealth);
     }
     public void AddHealth(float _value)
     {

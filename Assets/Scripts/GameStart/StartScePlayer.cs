@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class StartScePlayer : MonoBehaviour
 {
     public GameObject swordObj;
     public GameObject targetPosition;
     Transform trans;
     public Quaternion QI = Quaternion.identity;
-
-    public float swordSpeed = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +25,6 @@ public class StartScePlayer : MonoBehaviour
     {
         Transform TR = Instantiate(swordObj, trans.position + new Vector3(1, 0, 0), QI).transform;
 
-         
-
-        Invoke("SwordShooting", 2.46f);
+        Invoke("SwordShooting", 2.5f);
     }
 }

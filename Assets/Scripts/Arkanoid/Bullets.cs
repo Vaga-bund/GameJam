@@ -40,16 +40,13 @@ public class Bullets : MonoBehaviour
         if (rb.velocity.magnitude != 0 && rb.velocity.x < 0.15f && rb.velocity.x > -0.15f)
         {
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(0.2f, rb.velocity.y > 0 ? 1 : -1).normalized);
+            rb.AddForce(new Vector2(-0.4f, rb.velocity.y > 0 ? 1 : -1).normalized);
         }
         if (rb.velocity.magnitude != 0 && rb.velocity.y < 0.15f && rb.velocity.y > -0.15f)
         {
             rb.velocity = Vector2.zero;
-            rb.AddForce(new Vector2(rb.velocity.x > 0 ? 1 : -1, 0.2f).normalized);
+            rb.AddForce(new Vector2(rb.velocity.x > 0 ? 1 : -1, 0.4f).normalized);
         }
-
-        if (rb.velocity.magnitude < 6.0f)
-            rb.velocity = direction * Mathf.Max(speed, shootSpeed);
 
         Vector3 currentEuler = transform.rotation.eulerAngles;
         float rotation = currentEuler.z;

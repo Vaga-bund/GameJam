@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 217596582359288129}
   - component: {fileID: 6371757507070753246}
   - component: {fileID: 1389770214230779465}
+  - component: {fileID: 1351169942294502516}
   m_Layer: 0
-  m_Name: Monster (0)
+  m_Name: Monster_Rat
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b46b12ff290649c4aa428bce9c66cfbe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a9285ed005b0b75478275b2805faff98, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,14 +103,30 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.02, y: 1.02}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1351169942294502516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3828638408428175140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960beae242ac6434789ce122c1372c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 10
+  iFramesDuration: 0
+  numberOfFlashes: 0
+  components: []
 --- !u!1 &5936958125652483694
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +193,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d771df6ed9d46fc4dada28721157b3d0, type: 3}
+    m_Font: {fileID: 12800000, guid: aae1cc1c812fbfa42a90c61b30144294, type: 3}
     m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0

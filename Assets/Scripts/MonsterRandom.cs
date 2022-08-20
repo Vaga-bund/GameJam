@@ -14,6 +14,8 @@ public class MonsterRandom : MonoBehaviour
     public Transform MonsterGroup;
     int fox = 0;
 
+    public Health mosterHP;
+
     int boxApp = 1;
     // Start is called before the first frame update
     void Start()
@@ -32,8 +34,6 @@ public class MonsterRandom : MonoBehaviour
 
     public void SpawnMonster()
     {
-
-        
         if(gameManager.iceSK == 0)
         {
 
@@ -163,7 +163,7 @@ public class MonsterRandom : MonoBehaviour
         return 0;
     }
 
-    int MonsterHP(int mon)
+    float MonsterHP(int mon)
     {
         Debug.Log("1");
         if (mon == 0)

@@ -171,7 +171,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 201721047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a1f0bfd40704bd4e8c4036518d5c5d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9094da2931726e647aa184dae963667e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &201721050
@@ -427,7 +427,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 51f64b6ff5b71af4a8c5e8e8294f855a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29e4e27b2386b304b82974cf8175fa2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -577,7 +577,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d771df6ed9d46fc4dada28721157b3d0, type: 3}
+    m_Font: {fileID: 12800000, guid: aae1cc1c812fbfa42a90c61b30144294, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1085056692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91d694a88d54605448f2dcd541715f70, type: 3}
+  m_Script: {fileID: 11500000, guid: 92f10b34abd2873498e9bf817e3ba58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1331697099
@@ -668,7 +668,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d771df6ed9d46fc4dada28721157b3d0, type: 3}
+    m_Font: {fileID: 12800000, guid: aae1cc1c812fbfa42a90c61b30144294, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -831,7 +831,7 @@ Animator:
   m_GameObject: {fileID: 2064234249}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e8cfdb8414320844c91258cacea0cc55, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9b601f4f883fb0b4f9e2f07683ff5ff6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -914,10 +914,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2064234249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd5c4e07f9f49554abde5ce0af5e4a13, type: 3}
+  m_Script: {fileID: 11500000, guid: 76d156044dfc5e84ca037e6cc5b38110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordObj: {fileID: 7690286624130662884, guid: 716e50842d8e8404e9558431c8ab5aab, type: 3}
+  swordObj: {fileID: 7690286624130662884, guid: b90670770cda1f245a965b54362f4566, type: 3}
   targetPosition: {fileID: 1580128432}
   QI: {x: 0, y: 0, z: 0, w: 1}
-  swordSpeed: 1
+  swordSpeed: 2

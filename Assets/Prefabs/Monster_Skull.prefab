@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5374931601608932081}
   - component: {fileID: 9030873395516091008}
   - component: {fileID: 5011215753080635384}
+  - component: {fileID: 2499900160783369999}
   m_Layer: 0
-  m_Name: Monster (1)
+  m_Name: Monster_Skull
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 965bd1a490538104f8b9adf54c9abd19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1216f5b66ba36343b9fc90b554aa8fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,8 +109,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.02, y: 1.02}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2499900160783369999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230653933827767184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960beae242ac6434789ce122c1372c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 30
+  iFramesDuration: 0
+  numberOfFlashes: 0
+  components: []
 --- !u!1 &5891738148928920816
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +193,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d771df6ed9d46fc4dada28721157b3d0, type: 3}
+    m_Font: {fileID: 12800000, guid: aae1cc1c812fbfa42a90c61b30144294, type: 3}
     m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0

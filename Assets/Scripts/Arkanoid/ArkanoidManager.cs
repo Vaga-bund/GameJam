@@ -12,7 +12,7 @@ public class ArkanoidManager : MonoBehaviour
     public Animator playerAni;
     public Health playerHP;
 
-    private float bulletSpeed = 6.0f;
+    private float bulletSpeed = 12.0f;
 
     private Vector3 target;
     private bool playerMovePhase;
@@ -104,6 +104,10 @@ public class ArkanoidManager : MonoBehaviour
             if (player.transform.position.y > 4.0f)
             {
                 player.transform.position = new Vector2(player.transform.position.x, 4.0f);
+            }
+            if (player.transform.position.y < -4.0f)
+            {
+                player.transform.position = new Vector2(player.transform.position.x, -4.0f);
             }
         }
 
