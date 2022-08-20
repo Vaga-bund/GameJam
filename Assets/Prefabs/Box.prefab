@@ -640,7 +640,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 5389621234857285061}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1522b6295ba62074bb3198bcf863bbd1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -674,6 +674,8 @@ MonoBehaviour:
   numberOfFlashes: 0
   components: []
   BoxDie: 0
+  MonsyerDie: 0
+  Monstermun: 0
 --- !u!114 &20800994513791138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,7 +694,6 @@ MonoBehaviour:
   - {fileID: 6099994826941401811}
   - {fileID: 3657123307955563588}
   - {fileID: 4572292973521457747}
-  Point: {fileID: 0}
 --- !u!95 &4445907761226776141
 Animator:
   serializedVersion: 3

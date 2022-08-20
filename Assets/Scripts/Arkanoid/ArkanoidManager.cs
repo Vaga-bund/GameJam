@@ -72,7 +72,6 @@ public class ArkanoidManager : MonoBehaviour
 
             if (monsterMove)
             {
-                //spawn.SpawnMonster();
                 monsterMove = false;
             }
         }
@@ -85,17 +84,16 @@ public class ArkanoidManager : MonoBehaviour
     {
         GameObject bulletIns;
 
-        if (bulletAmount < bulletAmmo)
+        if (bulletAmount > 0)
         {
             fireRate = 0.0f;
 
-            //bulletIns = Instantiate(bullet, shootPos.position, Quaternion.Euler(0.0f, 0.0f, rotationZ), transform);
             bulletIns = Instantiate(bullet, shootPos.position, Quaternion.Euler(0.0f, 0.0f, angle), transform);
             bulletIns.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
             var bulletComponent = bulletIns.GetComponent<Bullets>();
             bulletComponent.pointShoot = this;
 
-            bulletAmount++;
+            bulletAmount--;
         }
     }
 
@@ -116,10 +114,8 @@ public class ArkanoidManager : MonoBehaviour
     
     IEnumerator movePhase(float rotZ)
     {
-        yield return new WaitForSeconds(0.2f);
-
         ableMove = true;
-        bulletAmount = 0.0f;
+        bulletAmount = bulletAmmo;
         //Debug.Log("Start Move Phase");
 
         if (ableMove)
@@ -148,6 +144,8 @@ public class ArkanoidManager : MonoBehaviour
             playerAttackPhase = true;
 
             timer = 0.0f;
+
+            yield return null;
         }
     }
 
