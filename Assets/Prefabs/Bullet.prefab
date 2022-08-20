@@ -98,9 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   degreePerSec: 20
-  test: {fileID: 3555349967508703064, guid: 219618e82b92f654aa4636de960456da, type: 3}
-  pointShoot: {fileID: 8047743067348763990, guid: 41e42b0d8b640224092206e81222a618, type: 3}
-  clip: {fileID: 8300000, guid: 91058829871d35b4faf6c4ec96e1815b, type: 3}
+  test: {fileID: 0}
+  pointShoot: {fileID: 0}
 --- !u!50 &-3676460286686333702
 Rigidbody2D:
   serializedVersion: 4

@@ -27,7 +27,7 @@ public class ArkanoidManager : MonoBehaviour
     private float bulletAmount = 0.0f;
     private float fireRate = 0.1f;
     private float fireCoolTime = 0.1f;
-    private float damage = 1.0f;
+    public float damage = 1.0f;
 
     private float bulletCount;
     private float angle;
@@ -82,6 +82,8 @@ public class ArkanoidManager : MonoBehaviour
             //bulletIns = Instantiate(bullet, shootPos.position, Quaternion.Euler(0.0f, 0.0f, rotationZ), transform);
             bulletIns = Instantiate(bullet, shootPos.position, Quaternion.Euler(0.0f, 0.0f, angle), transform);
             bulletIns.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+            var bulletComponent = bulletIns.GetComponent<Bullets>();
+            bulletComponent.pointShoot = this;
 
             bulletAmount++;
         }
@@ -96,6 +98,10 @@ public class ArkanoidManager : MonoBehaviour
     public void IncreaseAmmo()
     {
         bulletAmmo++;
+    }
+    public void IncreaseDamage()
+    {
+        damage++;
     }
 
 

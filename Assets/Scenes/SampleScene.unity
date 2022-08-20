@@ -12333,6 +12333,7 @@ MonoBehaviour:
   playerHP: {fileID: 1117331455}
   clip: {fileID: 8300000, guid: 4cb198c9bf63bcc428465c939cbae337, type: 3}
   bulletAmmo: 10
+  damage: 1
   hit: 0
 --- !u!1 &340179938
 GameObject:
@@ -14419,7 +14420,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2a222a6a5696584418ad09e2f8cde7db, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
