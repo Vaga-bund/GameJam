@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Image[] UIMonster;
     public int[] MonsterPoint;
 
+    public Image UIDamge;
+
     public ArkanoidManager arkanoidManager;
 
     public bool isBlockMoving;
@@ -111,6 +113,8 @@ public class GameManager : MonoBehaviour
             Debug.Log(BoxOpen.Boxrand + " æ∆¿ÃΩ∫");
             iceSK++;
         }
+
+        UIDamge.GetComponentInChildren<Text>().text = " X" + arkanoidManager.damage.ToString();
     }
 
     public void Monsterscore(int mun)
