@@ -20,12 +20,18 @@ public class Health : MonoBehaviour
     private bool invulnerable;
 
     public bool BoxDie = false;
+    public bool MonsyerDie = false;
+    public int Monstermun;
 
+    public static bool MonsterRatDie = false;
+    public static bool MonsterSkullDie = false;
+    public static bool MonsterNineTailDie = false;
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+
     }
     public void TakeDamage(float _damage)
     {
@@ -55,14 +61,28 @@ public class Health : MonoBehaviour
                 if (gameObject.name == "Box(Clone)")
                 {
                     BoxDie = true;
-
                 }
-                    
                 else
                 {
+                    MonsyerDie = true;
+                    if (gameObject.name == "Monster_Rat(Clone)")
+                    {
+                        MonsterRatDie = true;
+                    }
+                    else if (gameObject.name == "Monster_Skull(Clone)")
+                    {
+                        MonsterSkullDie = true;
+                    }
+                    else if (gameObject.name == "Monster_NineTail(Clone)")
+                    {
+                        MonsterNineTailDie = true;
+                    }
                     Destroy(this.gameObject);
                 }
-                     
+
+                
+
+
             }
         }
     }
