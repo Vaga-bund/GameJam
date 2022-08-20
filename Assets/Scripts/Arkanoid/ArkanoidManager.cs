@@ -38,6 +38,7 @@ public class ArkanoidManager : MonoBehaviour
 
     private float timer = 0.0f;
 
+    public bool playerDie = false;
     public bool hit = false;
     public bool monsterMove = false;
     void Awake()    
@@ -52,7 +53,9 @@ public class ArkanoidManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (playerDie)
+            return;
+
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
         crossHair.transform.position = new Vector2(target.x, target.y);
 

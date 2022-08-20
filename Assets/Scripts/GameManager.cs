@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Image[] UIMonster;
     public int[] MonsterPoint;
 
+    public Text gmaeOverUI;
+
     public Image UIDamge;
 
     public ArkanoidManager arkanoidManager;
@@ -53,7 +55,10 @@ public class GameManager : MonoBehaviour
         if (playerHP <= 0)
         {
             playerHP = 0;
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            gmaeOverUI.gameObject.SetActive(true);
+            arkanoidManager.playerDie = true;
+            if (Input.GetMouseButton(0))
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         if (BoxOpen.Boxop)
         {
