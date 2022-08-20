@@ -32,6 +32,8 @@ public class Health : MonoBehaviour
 
         transform.GetComponentInChildren<Text>().text = currentHealth.ToString();
 
+        Debug.Log(currentHealth);
+
         if (currentHealth > 0)
         {
             //anim.SetTrigger("Hurt");

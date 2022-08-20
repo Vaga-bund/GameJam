@@ -7,11 +7,12 @@ public class Bullets : MonoBehaviour
     private Rigidbody2D rb;
 
     private float shootSpeed = 1.2f;
+    public float degreePerSec;
 
     public Health test;
 
     public ArkanoidManager pointShoot;
-    
+
     Vector3 lastVeclocity;
     // Start is called before the first frame update
     void Awake()
@@ -25,6 +26,8 @@ public class Bullets : MonoBehaviour
     void Update()
     {
         lastVeclocity = rb.velocity;
+
+        transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f) * degreePerSec);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
