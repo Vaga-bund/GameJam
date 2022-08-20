@@ -67,7 +67,7 @@ public class Bullets : MonoBehaviour
         {
             test = collision.transform.GetComponent<Health>();
             test.TakeDamage(pointShoot.damage);
-            Debug.Log($"¤±¤¤¤µ¤·¤©¤©³ó | {pointShoot.damage}");
+            //Debug.Log($"¤±¤¤¤µ¤·¤©¤©³ó | {pointShoot.damage}");
         }
         if(col.CompareTag("Box"))
         {

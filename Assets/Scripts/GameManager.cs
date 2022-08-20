@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Image[] UIMonster;
     public int[] MonsterPoint;
 
+    public Image UIDamge;
+
     public ArkanoidManager arkanoidManager;
 
     public bool isBlockMoving;
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
     public int Con = 1;
     public int playerHP = 3;
     public int iceSK = 0;
+
+    bool damgeUp = false;
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +81,8 @@ public class GameManager : MonoBehaviour
 
         if (MonsterPoint[0] >= 50 && MonsterPoint[1] >= 40 && MonsterPoint[2] >= 10)
             GameClear();
+
+        
     }
 
     void BoxSkill()
@@ -86,6 +92,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log(BoxOpen.Boxrand + " 검의 갯수");
             arkanoidManager.IncreaseAmmo();
+            
         }
         // 공격력 보너스
         else if(BoxOpen.Boxrand < 70)
@@ -106,6 +113,7 @@ public class GameManager : MonoBehaviour
             Debug.Log(BoxOpen.Boxrand + " 아이스");
             iceSK++;
         }
+        UIDamge.GetComponentInChildren<Text>().text = " X" + arkanoidManager.damage.ToString();
     }
 
     public void Monsterscore(int mun)

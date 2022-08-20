@@ -24,12 +24,12 @@ public class ArkanoidManager : MonoBehaviour
     private bool ableAttack;
 
     public float bulletAmmo = 4.0f;
-    private float bulletAmount = 0.0f;
+    public float bulletAmount = 0.0f;
     private float fireRate = 0.1f;
     private float fireCoolTime = 0.1f;
     public float damage = 1.0f;
 
-    private float bulletCount;
+    public float bulletCount;
     private float angle;
     float distance;
     Vector2 direction = new Vector2(0.0f, 0.0f);
@@ -50,6 +50,7 @@ public class ArkanoidManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
         crossHair.transform.position = new Vector2(target.x, target.y);
 

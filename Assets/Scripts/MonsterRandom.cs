@@ -123,7 +123,7 @@ public class MonsterRandom : MonoBehaviour
         gameManager.isBlockMoving = false;
 
         //끝까지 갔을때 데미지 주고 파괴
-        if (targetPos.x < -8)
+        if (targetPos.x < -10)
         {
             if(TR.CompareTag("Monster"))
             {
