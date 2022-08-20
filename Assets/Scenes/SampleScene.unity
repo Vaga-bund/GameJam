@@ -12525,6 +12525,11 @@ MonoBehaviour:
   - {fileID: 975787094}
   - {fileID: 1614611817}
   - {fileID: 1076761526}
+  UIMonster:
+  - {fileID: 958409167}
+  - {fileID: 772026556}
+  - {fileID: 1855308574}
+  MonsterPoint: 000000000000000000000000
   arkanoidManager: {fileID: 325856805}
   isBlockMoving: 0
   MonsterNum: 1
@@ -13609,6 +13614,8 @@ MonoBehaviour:
   numberOfFlashes: 0
   components: []
   BoxDie: 0
+  MonsyerDie: 0
+  Monstermun: 0
 --- !u!95 &1117331456
 Animator:
   serializedVersion: 3

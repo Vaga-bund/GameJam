@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Image[] UIHeart;
+    public Image[] UIMonster;
+    public int[] MonsterPoint;
 
     public ArkanoidManager arkanoidManager;
 
@@ -56,6 +58,22 @@ public class GameManager : MonoBehaviour
             BoxOpen.Boxop = false;
             BoxSkill();
         }
+
+        if (Health.MonsterRatDie)
+        {
+            Health.MonsterRatDie = false;
+            Monsterscore(0);
+        }
+        else if (Health.MonsterSkullDie)
+        {
+            Health.MonsterSkullDie = false;
+            Monsterscore(1);
+        }
+        else if (Health.MonsterNineTailDie)
+        {
+            Health.MonsterNineTailDie = false;
+            Monsterscore(2);
+        }
     }
 
     void BoxSkill()
@@ -84,5 +102,11 @@ public class GameManager : MonoBehaviour
             Debug.Log(BoxOpen.Boxrand + " æ∆¿ÃΩ∫");
             iceSK++;
         }
+    }
+
+    public void Monsterscore(int mun)
+    {
+        MonsterPoint[mun]++;
+        UIMonster[mun].GetComponentInChildren<Text>().text = " X" + MonsterPoint[mun].ToString();
     }
 }
