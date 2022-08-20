@@ -10,7 +10,7 @@ public class MonsterRandom : MonoBehaviour
     public Quaternion QI = Quaternion.identity; 
 
 
-    public GameManger gameManger;
+    public GameManager gameManager;
     public Transform MonsterGroup;
     int fox = 0;
 
@@ -24,9 +24,9 @@ public class MonsterRandom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManger.Con == 3)
+        if (gameManager.Con == 3)
         {
-            gameManger.MonsterNum = 3;
+            gameManager.MonsterNum = 3;
         }
     }
 
@@ -34,7 +34,7 @@ public class MonsterRandom : MonoBehaviour
     {
 
         
-        if(gameManger.iceSK == 0)
+        if(gameManager.iceSK == 0)
         {
 
             List<Vector2> SpawnList = new List<Vector2>();
@@ -43,7 +43,7 @@ public class MonsterRandom : MonoBehaviour
 
 
 
-            for (int i = 0; i < gameManger.MonsterNum; i++)
+            for (int i = 0; i < gameManager.MonsterNum; i++)
             {
                 int rand = Random.Range(0, SpawnList.Count);
                 // 소환될 적
@@ -51,7 +51,7 @@ public class MonsterRandom : MonoBehaviour
 
                 Transform TR = Instantiate(MonsterObjs[ranMonster], SpawnList[rand], QI).transform;
                 TR.SetParent(MonsterGroup);
-
+                TR.GetChild(0).GetComponentInChildren<Text>().text = MonsterHP(ranMonster).ToString();
 
 
                 SpawnList.RemoveAt(rand);
@@ -59,10 +59,10 @@ public class MonsterRandom : MonoBehaviour
 
             if (boxApp == 1)
             {
-                Instantiate(BoxObjs, SpawnList[Random.Range(0, SpawnList.Count)], QI).transform.SetParent(MonsterGroup);
+                Instantiate(BoxObjs, SpawnList[Random.Range(0, SpawnList.Count)] + new Vector2(0, -1f), QI).transform.SetParent(MonsterGroup);
 
             }
-
+             
 
             boxApp++;
 
@@ -71,17 +71,17 @@ public class MonsterRandom : MonoBehaviour
 
             fox = 0;
 
-            if (gameManger.Con != 3)
+            if (gameManager.Con != 3)
             {
-                if (gameManger.MonsterNum < 3)
-                    gameManger.MonsterNum++;
+                if (gameManager.MonsterNum < 3)
+                    gameManager.MonsterNum++;
                 else
-                    gameManger.MonsterNum = 1;
+                    gameManager.MonsterNum = 1;
             }
 
 
 
-            gameManger.isBlockMoving = true;
+            gameManager.isBlockMoving = true;
 
 
             for (int i = 0; i < MonsterGroup.childCount; i++)
@@ -89,7 +89,7 @@ public class MonsterRandom : MonoBehaviour
         }
         else
         {
-            gameManger.iceSK = 0;
+            gameManager.iceSK = 0;
         }
         
     }
@@ -120,14 +120,14 @@ public class MonsterRandom : MonoBehaviour
             if (TR.position == targetPos) break;
         }
 
-        gameManger.isBlockMoving = false;
+        gameManager.isBlockMoving = false;
 
         //끝까지 갔을때 데미지 주고 파괴
-        if (targetPos.x < -6)
+        if (targetPos.x < -8)
         {
             if(TR.CompareTag("Monster"))
             {
-                gameManger.playerHP--;
+                gameManager.playerHP--;
             }
             Destroy(TR.gameObject);
         }
@@ -136,11 +136,11 @@ public class MonsterRandom : MonoBehaviour
     int RandomMonster()
     {
         int rand = 0;
-        if (gameManger.Con == 1)
+        if (gameManager.Con == 1)
         {
             return 0;
         }
-        else if(gameManger.Con == 2)
+        else if(gameManager.Con == 2)
         {
             rand = Random.Range(0, 10);
 
@@ -149,7 +149,7 @@ public class MonsterRandom : MonoBehaviour
             else
                 return 1;
         }
-        else if(gameManger.Con == 3)
+        else if(gameManager.Con == 3)
         {
             if(fox == 0)
             {
