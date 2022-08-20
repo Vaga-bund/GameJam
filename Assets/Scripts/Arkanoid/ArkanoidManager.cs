@@ -10,6 +10,8 @@ public class ArkanoidManager : MonoBehaviour
     public Transform shootPos;
     public LineRenderer mouseLR;
 
+    public MonsterRandom spawn;
+
     public Animator playerAni;
     public Health playerHP;
 
@@ -37,7 +39,7 @@ public class ArkanoidManager : MonoBehaviour
     private float timer = 0.0f;
 
     public bool hit = false;
-
+    public bool monsterMove = false;
     void Awake()    
     {
         bulletCount = 0.0f;
@@ -64,11 +66,18 @@ public class ArkanoidManager : MonoBehaviour
         if (playerAttackPhase)
             StartCoroutine(attackPhase(difference, rotationZ));
         else if(!playerAttackPhase)
+        {
             StopCoroutine(attackPhase(difference, rotationZ));
+
+            if (monsterMove)
+            {
+                //spawn.SpawnMonster();
+                monsterMove = false;
+            }
+        }
 
         if (hit)
             playerHP.TakeDamage(1);
-
     }
 
     void Shoot(Vector2 direction, float rotationZ)
@@ -103,9 +112,7 @@ public class ArkanoidManager : MonoBehaviour
     {
         damage++;
     }
-
-
-
+    
     IEnumerator movePhase(float rotZ)
     {
         yield return new WaitForSeconds(0.2f);
@@ -145,8 +152,6 @@ public class ArkanoidManager : MonoBehaviour
 
     IEnumerator attackPhase(Vector3 dif, float rotZ)
     {
-        yield return new WaitForSeconds(0.2f);
-
         mouseLR.SetPosition(0, shootPos.position);
         mouseLR.SetPosition(1, new Vector3(target.x, target.y, 0.0f));
 
@@ -185,6 +190,11 @@ public class ArkanoidManager : MonoBehaviour
             playerAttackPhase = false;
 
             playerAni.SetBool("IsAttack", false);
+
+            monsterMove = true;
+
+            spawn.SpawnMonster();
+            yield return null;
         }
     }
 }

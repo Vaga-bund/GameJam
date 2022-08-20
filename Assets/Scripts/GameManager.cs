@@ -77,6 +77,11 @@ public class GameManager : MonoBehaviour
 
         if (MonsterPoint[0] >= 50 && MonsterPoint[1] >= 40 && MonsterPoint[2] >= 10)
             GameClear();
+
+        if (arkanoidManager.damage >= 5.0f || arkanoidManager.bulletAmmo >= 10.0f)
+            Con = 3;
+        else if (arkanoidManager.damage >= 3.0f || arkanoidManager.bulletAmmo >= 7.0f)
+            Con = 2;
     }
 
     void BoxSkill()

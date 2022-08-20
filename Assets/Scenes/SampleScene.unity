@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &45786464
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12329,12 +12329,14 @@ MonoBehaviour:
   bullet: {fileID: 3834973209139253411, guid: ece43f088efad6448bf90c122aa046fd, type: 3}
   shootPos: {fileID: 1523292461}
   mouseLR: {fileID: 1049985883}
+  spawn: {fileID: 45786465}
   playerAni: {fileID: 1117331456}
   playerHP: {fileID: 1117331455}
   clip: {fileID: 8300000, guid: 4cb198c9bf63bcc428465c939cbae337, type: 3}
-  bulletAmmo: 10
+  bulletAmmo: 3
   damage: 1
   hit: 0
+  monsterMove: 0
 --- !u!1 &340179938
 GameObject:
   m_ObjectHideFlags: 0
