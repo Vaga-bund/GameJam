@@ -97,8 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01d30ed9901be474192f290a2c7480f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  degreePerSec: 20
   test: {fileID: 3555349967508703064, guid: 219618e82b92f654aa4636de960456da, type: 3}
   pointShoot: {fileID: 8047743067348763990, guid: 41e42b0d8b640224092206e81222a618, type: 3}
+  clip: {fileID: 8300000, guid: 91058829871d35b4faf6c4ec96e1815b, type: 3}
 --- !u!50 &-3676460286686333702
 Rigidbody2D:
   serializedVersion: 4
@@ -133,6 +135,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.038613975, y: 0}
+  m_Offset: {x: -0.017715394, y: 0}
   serializedVersion: 2
-  m_Radius: 2.7355967
+  m_Radius: 2.3638234

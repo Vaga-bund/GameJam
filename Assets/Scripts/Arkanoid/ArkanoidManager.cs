@@ -8,9 +8,12 @@ public class ArkanoidManager : MonoBehaviour
     public GameObject player;
     public GameObject bullet;
     public Transform shootPos;
+    public LineRenderer mouseLR;
 
     public Animator playerAni;
     public Health playerHP;
+
+    public AudioClip clip;
 
     private float bulletSpeed = 12.0f;
 
@@ -64,6 +67,7 @@ public class ArkanoidManager : MonoBehaviour
 
         if (hit)
             playerHP.TakeDamage(1);
+
     }
 
     void Shoot(Vector2 direction, float rotationZ)
@@ -129,6 +133,9 @@ public class ArkanoidManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
 
+        mouseLR.SetPosition(0, shootPos.position);
+        mouseLR.SetPosition(1, new Vector3(target.x, target.y, 0.0f));
+
         //player.transform.rotation = Quaternion.Euler(target);
 
        // Debug.Log("Attack Move Phase");
@@ -144,6 +151,9 @@ public class ArkanoidManager : MonoBehaviour
             direction.Normalize();
 
             playerAni.SetBool("IsAttack", true);
+
+            SoundManager.instance.SFXPlay("Slash", clip);
+
         }
 
         if (!ableAttack && fireRate > fireCoolTime)
@@ -153,6 +163,9 @@ public class ArkanoidManager : MonoBehaviour
 
         if(bulletCount <= 0.0f)
         {
+            mouseLR.SetPosition(0, Vector3.zero);
+            mouseLR.SetPosition(1, Vector3.zero);
+
             ableAttack = true;
             playerMovePhase = true;
             playerAttackPhase = false;
