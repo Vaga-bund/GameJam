@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         else if(BoxOpen.Boxrand < 70)
         {
             Debug.Log(BoxOpen.Boxrand + " 공격력 보너스");
+            arkanoidManager.IncreaseDamage();
         }
         // 체력회복
         else if(BoxOpen.Boxrand < 85)

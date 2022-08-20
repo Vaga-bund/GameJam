@@ -15,9 +15,8 @@ public class Bullets : MonoBehaviour
 
     Vector3 lastVeclocity;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
         //rb.AddForce(new Vector2(9.8f * 25f, 9.8f * 25f));
     }
@@ -67,7 +66,8 @@ public class Bullets : MonoBehaviour
         if(col.CompareTag("Monster"))
         {
             test = collision.transform.GetComponent<Health>();
-            test.TakeDamage(1);
+            test.TakeDamage(pointShoot.damage);
+            Debug.Log($"¤±¤¤¤µ¤·¤©¤©³ó | {pointShoot.damage}");
         }
         if(col.CompareTag("Box"))
         {
