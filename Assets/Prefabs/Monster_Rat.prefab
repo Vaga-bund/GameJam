@@ -94,7 +94,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3828638408428175140}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1522b6295ba62074bb3198bcf863bbd1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -127,6 +127,9 @@ MonoBehaviour:
   iFramesDuration: 0
   numberOfFlashes: 0
   components: []
+  BoxDie: 0
+  MonsyerDie: 0
+  Monstermun: 0
 --- !u!1 &5936958125652483694
 GameObject:
   m_ObjectHideFlags: 0
